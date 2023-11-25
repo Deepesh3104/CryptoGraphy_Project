@@ -86,7 +86,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/etencc"
+            android:id="@+id/etenc"
             android:layout_width="340dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
@@ -137,7 +137,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/enctvv"
+            android:id="@+id/enctv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -154,7 +154,7 @@
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_margin="15dp"
-                android:onClick="enc"
+                android:onClick="cp2"
                 android:text="Copy" />
         </LinearLayout>
 

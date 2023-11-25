@@ -10,32 +10,37 @@ public class encode {
             a[i] = (int) s.charAt(i);
             ct++;
         }
+
+        int bin[] = new int[7]; // Assuming each character is represented by 7 bits
         String res = "";
-        int bin[] = new int[111];
         int idx = 0;
+
         for (int ii = 0; ii < ct; ii++) {
             int temp = a[ii];
-            for(int j=0;j<ct;j++) bin[j]=0;
-            idx=0;
-            while(temp>0) {
-                bin[idx++]=temp%2;
-                temp=temp/2;
+            idx = 0;
+            while (temp > 0) {
+                bin[idx++] = temp % 2;
+                temp = temp / 2;
             }
+
+            // Convert binary representation to a reversed string
             String dig = "";
             String temps;
-            for(int j = 0; j<7;j++){
+            for (int j = 0; j < 7; j++) {
                 temps = Integer.toString(bin[j]);
                 dig = dig.concat(temps);
-        }
-            String rev = "";
-            for(int j = dig.length()-1; j>=0; j--){
-                char ca = dig.charAt(j);
-                rev=rev.concat(String.valueOf(ca));
             }
+
+            String rev = "";
+            for (int j = dig.length() - 1; j >= 0; j--) {
+                char ca = dig.charAt(j);
+                rev = rev.concat(String.valueOf(ca));
+            }
+
             res = res.concat(rev);
         }
+
         res = initializer.concat(res);
         return res;
-
     }
 }

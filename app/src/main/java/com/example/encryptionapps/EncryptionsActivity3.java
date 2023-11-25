@@ -12,8 +12,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class EncryptionsActivity3 extends AppCompatActivity {
-    EditText etencc;
-    TextView enctvv;
+    EditText etenc;
+    TextView enctv;
     ClipboardManager cpb;
 
     @Override
@@ -21,19 +21,19 @@ public class EncryptionsActivity3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_encryptions3);
 
-        etencc = findViewById(R.id.etencc);
-        enctvv = findViewById(R.id.enctvv);
+        etenc = findViewById(R.id.etenc);
+        enctv = findViewById(R.id.enctv);
         cpb = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
     }
 
     public void enc(View view) {
-        String temp = etencc.getText().toString();
+        String temp = etenc.getText().toString();
         String rv = encode.enc(temp);
-        enctvv.setText(rv);
+        enctv.setText(rv);
     }
 
     public void cp2(View view) {
-        String data = enctvv.getText().toString().trim();
+        String data = enctv.getText().toString().trim();
         if (!data.isEmpty()) {
             ClipData clipData = ClipData.newPlainText("text", data);
             cpb.setPrimaryClip(clipData); // Set the ClipData to the clipboard
